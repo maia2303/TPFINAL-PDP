@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "titulo": "Hacer final de Paradigmas de la Programacion",
+        "descripcion": "Leer consignas y resolver",
+        "estado": "pendiente",
+        "dificultad": 2,        
+        "vencimiento": null,
+        "creacion": null,
+        "ultimaEdicion": null
+    }
+]

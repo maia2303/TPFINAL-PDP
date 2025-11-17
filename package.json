@@ -8,9 +8,13 @@
     "start": "npm run build && node dist/main.js"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash-fp": "^0.10.4",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.10.1",
     "@types/uuid": "^10.0.0",
     "typescript": "^5.0.0"
   }

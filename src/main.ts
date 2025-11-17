@@ -17,7 +17,7 @@ function main {
 
                 menuPrincipal();
 
-                const input = console.log("\nElige una opción: ");
+                const input = console.log("\nElige una opcion: ");
                 const opcion = parseInt(input);
                 
 

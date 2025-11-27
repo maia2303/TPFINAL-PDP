@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import { TareasService } from "./
 
@@ -105,18 +106,46 @@ async function agregarTarea(): Promise<void> {
 
 menu();
 =======
+=======
+import PromptSync from "prompt-sync";
+>>>>>>> 1dab00e13e8dc183bb56327d5517760ebf7e7024
 import * as readline from 'readline';
-import {Tarea} from '.models/Tarea';
+import {Tarea} from './models/Tarea';
+import { crearTarea } from './utils/crearTarea';
+
+const prompt = PromptSync();
+let opcion = -1;
 
 
-function menuPrincipal(){
-    console.log("Menu Principal");
-    console.log("[1] Ver todas las Tareas");
+while(opcion !== 0) {
+    console.log("~Menú principal~");
+    console.log("[1] Ver todas las tareas");
     console.log("[2] Buscar una tarea");
-    console.log("[3] Agregar una tarea");
+    console.log("[3] Crear una tarea");
     console.log("[0] Salir");
+
+    opcion = Number(prompt(">> "));
+
+    switch(opcion){
+        case 1: //Tarea();
+            break;
+        case 2:
+            //buscarTarea();
+            break;
+        case 3:
+            crearTarea(); //creaTarea
+        break;
+        case 0:
+            console.log("Saliendo...");
+            break;
+        default: 
+        console.log("Opción inválida, intenta nuevamente...");
+        break;
+        }
+ 
 }
 
+<<<<<<< HEAD
 
 function main {
     let salir = false;
@@ -156,3 +185,5 @@ function main {
 
 main();
 >>>>>>> feaacf76c8a172e62c8e23b92f82069cda9c4c46
+=======
+>>>>>>> 1dab00e13e8dc183bb56327d5517760ebf7e7024

@@ -1,77 +1,36 @@
 export type Estado = "pendiente" | "en curso" | "terminada" | "cancelada"; //ver si lo podemos meter dentro de la clase Tarea y donde o como.
 export type Dificultad = 1 | 2 | 3;
 
-//Objeto de la tarea
+//Objeto de la tarea        HACERLA INTERFAZ!!
+
 export class Tarea
 {   //atributos 
-    private _id: number;
-    private _titulo: string;
-    private _descripcion: string;
-    private _estado:Estado;
-    private _dificultad: Dificultad;
-    private _vencimiento: Date | null; 
-    private _creacion: Date;
-    private _ultimaEdicion: Date;
+    //id: number;
+    titulo: string;
+    descripcion: string;
+    estado:Estado;
+    dificultad: Dificultad;
+    vencimiento: Date | null; 
+    creacion: Date;
+    ultimaEdicion: Date;
 
     //constructor no van dentro del () los de tipo Date pq son valores que los va a generar la computadora, no son ingresados por el usuario
-    constructor(id: number, titulo: string, descripcion: string, dificultad: Dificultad) 
+    constructor(titulo: string, descripcion: string, dificultad: Dificultad = 1, vencimiento: Date | null = null, estado: Estado = "pendiente") 
     {
-        this._id = id;
-        this._titulo = titulo;
-        this._descripcion = descripcion;
-        this._estado = "pendiente";
-        this._dificultad = dificultad;
-        this._vencimiento = null;
-        this._creacion = new Date();
-        this._ultimaEdicion = new Date();
-    }
+        //validacion del titulo
+        if (!titulo || titulo.trim() === "") 
+        {
+            throw new Error("El título no puede estar vacío.");
+        }
 
-    //getters
-    public get id(): number{
-        return this._id;
-    }
-    public get titulo(): string{
-        return this._titulo;
-    }
-    public get descripcion(): string{
-        return this._descripcion;
-    }
-    public get estado(): string{
-        return this._estado;
-    }
-    public get dificultad(): number{
-        return this._dificultad;
-    }
-    public get vencimiento(): Date | null{
-        return this._vencimiento;
-    }
-    public get creacion(): Date{
-        return this._creacion;
-    }//no hace falta hacer un set de creacion pq es solo de lectura
-    public get ultimaEdicion(): Date{
-        return this._ultimaEdicion;
-    }
-
-    //setters
-    public set titulo(nuevoTitulo: string)
-    {
-        this._titulo = nuevoTitulo;
-        this._ultimaEdicion = new Date();
-    }
-    public set descripcion(nuevaDescripcion: string)
-    {
-        this._descripcion = nuevaDescripcion;
-        this._ultimaEdicion = new Date();//Para que se actualice sola la fecha de edicion
-    }
-    public set estado(nuevoEstado: Estado)
-    {
-        this._estado = nuevoEstado;
-        this._ultimaEdicion = new Date();
-    }
-    public set dificultad(nuevaDificultad: Dificultad)
-    {
-        this._dificultad = nuevaDificultad;
-        this._ultimaEdicion = new Date();
+        //this.id = id;
+        this.titulo = titulo.trim(); // para asegurar que no hayan espacios al inicio o al final
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.dificultad = dificultad;
+        this.vencimiento = null;
+        this.creacion = new Date();
+        this.ultimaEdicion = new Date();
     }
 
 // Metodo de tarea

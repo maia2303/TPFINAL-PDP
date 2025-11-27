@@ -1,5 +1,7 @@
-import fp from "lodash";
-import { Dificultad, Estado, Tarea } from "../models/Tarea";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/*import fp from "lodash";
+import { Tarea } from "../models/Tarea";
 
 
 export function crearTarea() {
@@ -15,19 +17,15 @@ export function crearTarea() {
         let dificultad = prompt("Dificultad [1] Fácil  [2] Medio [3] Difícil: ") || "1";
         let vencimiento = prompt("Vencimiento (DD-MM-AAAA): ") || "Sin datos";
 
-        if(!titulo) return
-// 2025-07-12
-        const result = Number(dificultad) as Dificultad;
-
         try  //cuando no se pone titulo no se crea la tarea y vuelve a pedir los datos
         {
-            nuevaTarea = new Tarea(titulo, descripcion, result, new Date(vencimiento), estado as Estado);
-            datosValidos = true;
-            return nuevaTarea;
+        nuevaTarea = new Tarea(titulo, descripcion, dificultad, vencimiento, estado);
+        datosValidos = true;
         }
         catch (error)
-        {            
-            console.log("Error en la creacion de la tarea: ", error);
+        {
+            console.log("Error en la creacion de la tarea: " error.message);
         }
     }
-}
+    return nuevaTarea;
+} */ 

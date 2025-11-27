@@ -23,6 +23,7 @@ export function crearTarea() {
         catch (error: unknown)
         {
             console.log("Error en la creacion de la tarea: " error.message);
+            
         }
     }
     return nuevaTarea;

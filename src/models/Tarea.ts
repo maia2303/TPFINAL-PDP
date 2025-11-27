@@ -3,36 +3,16 @@ export type Dificultad = 1 | 2 | 3;
 
 //Objeto de la tarea
 
-export class Tarea
-{   //atributos 
-    //id: number;
-    titulo: string;
-    descripcion: string;
-    estado:Estado;
-    dificultad: Dificultad;
-    vencimiento: Date | null; 
-    creacion: Date;
-    ultimaEdicion: Date;
-
-    //constructor no van dentro del () los de tipo Date pq son valores que los va a generar la computadora, no son ingresados por el usuario
-    constructor(titulo: string, descripcion: string, dificultad: Dificultad = 1, vencimiento: Date | null = null, estado: Estado = "pendiente") 
-    {
-        //validacion del titulo
-        if (!titulo || titulo.trim() === "") 
-        {
-            throw new Error("El título no puede estar vacío.");
-        }
-
-        //this.id = id;
-        this.titulo = titulo.trim(); // para asegurar que no hayan espacios al inicio o al final
-        this.descripcion = descripcion;
-        this.estado = estado;
-        this.dificultad = dificultad;
-        this.vencimiento = null;
-        this.creacion = new Date();
-        this.ultimaEdicion = new Date();
-    }
-
+export interface Tarea {
+    readonly id: number,
+    readonly titulo: string;
+    readonly descripcion: string;
+    readonly estado: Estado;
+    readonly dificultad: Dificultad;
+    readonly vencimiento: string | null;
+    readonly creacion: string; //en los datos la creacion y ultima edicion se declaran como string y despues pasan a nueva fecha
+    readonly ultimaEdicion: string;
+}
 // Metodo de tarea
     detalle()
     {  

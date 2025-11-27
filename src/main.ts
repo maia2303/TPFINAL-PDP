@@ -1,50 +1,37 @@
+import PromptSync from "prompt-sync";
 import * as readline from 'readline';
-import {Tarea} from '.models/Tarea';
+import {Tarea} from './models/Tarea';
+import { crearTarea } from './utils/crearTarea';
+
+const prompt = PromptSync();
+let opcion = -1;
 
 
-function menuPrincipal(){
-    console.log("Menu Principal");
-    console.log("[1] Ver todas las Tareas");
+while(opcion !== 0) {
+    console.log("~Menú principal~");
+    console.log("[1] Ver todas las tareas");
     console.log("[2] Buscar una tarea");
-    console.log("[3] Agregar una tarea");
+    console.log("[3] Crear una tarea");
     console.log("[0] Salir");
+
+    opcion = Number(prompt(">> "));
+
+    switch(opcion){
+        case 1: //Tarea();
+            break;
+        case 2:
+            //buscarTarea();
+            break;
+        case 3:
+            crearTarea(); //creaTarea
+        break;
+        case 0:
+            console.log("Saliendo...");
+            break;
+        default: 
+        console.log("Opción inválida, intenta nuevamente...");
+        break;
+        }
+ 
 }
 
-
-function main {
-    let salir = false;
-        while(!salir){
-
-                menuPrincipal();
-
-                const input = console.log("\nElige una opcion: ");
-                const opcion = parseInt(input);
-                
-
-            switch(opcion){
-                case 1: Tarea();
-                    break;
-
-                case 2:
-                    await buscarTarea();
-                    break;
-
-                case 3:
-                    await agregarTarea();
-                    break;
-
-                case 0:
-                    salir = true;
-                    console.log("Saliendo...");
-                    break;
-
-                default: console.log("Opcion invalida, Intenta nuevamente")
-                    break;
-
-
-            }
-        }
-
-} 
-
-main();

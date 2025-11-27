@@ -1,5 +1,5 @@
 import fs from 'fs';//para leer y escribir el archivo json
-import { Tarea, Estado, Dificultad } from './Tarea';
+import { Tarea, Estado, Dificultad } from '.../models/Tarea';
 
 const archivo = "./tareas.json"; //indice de la ruta del archivo que va a leer
 const estadosValidos = ["pendiente", "en curso", "terminada", "cancelada"];

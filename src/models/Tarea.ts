@@ -1,7 +1,7 @@
 export type Estado = "pendiente" | "en curso" | "terminada" | "cancelada"; //ver si lo podemos meter dentro de la clase Tarea y donde o como.
 export type Dificultad = 1 | 2 | 3;
 
-//Objeto de la tarea
+//Objeto de la tarea        HACERLA INTERFAZ!!
 
 export class Tarea
 {   //atributos 

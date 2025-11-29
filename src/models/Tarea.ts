@@ -10,5 +10,6 @@ export interface Tarea {
     readonly vencimiento: string | null;
     readonly creacion: string; //en los datos la creacion y ultima edicion se declaran como string y despues pasan a nueva fecha
     readonly ultimaEdicion: string;
+    readonly eliminada: boolean; // indica si la tarea esta marcada como eliminada (Soft delete) 
 }
 

@@ -1,6 +1,6 @@
 import fs from 'fs';//para leer y escribir el archivo json
 <<<<<<< HEAD
-import { Tarea, Estado, Dificultad } from '.../models/Tarea';
+import { Tarea, Estado, Dificultad } from '../models/Tarea'; //Correccion de la ruta
 =======
 import { Tarea, Estado, Dificultad } from '../models/Tarea';
 >>>>>>> feaacf76c8a172e62c8e23b92f82069cda9c4c46
@@ -22,13 +22,7 @@ export class Lista
 
     //metodo para agregar la tarea
 
-    agregar(tarea:Tarea)
-    {
-        this.Lista.push(tarea);
-    }
-
-    //metodo para agregar tarea 
-    agregar(tarea: tarea){
+    agregar(tarea: Tarea){
         this.Lista.push(tarea);
 
 
